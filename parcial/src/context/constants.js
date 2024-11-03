@@ -2,4 +2,4 @@
 // export const apiUrl = 'https://backendrifas.vercel.app/'
 export const apiUrl = process.env.NODE_ENV === 'production' 
   ? '/auth/' 
-  : 'http://localhost:4000/auth/';
+  : 'http://localhost:4000/';
