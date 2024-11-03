@@ -14,7 +14,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      if(username == 'admin' && password == '123') return navigate('/usuario');
+      if(username == 'admin' && password == 'admin') return navigate('/usuario');
       const response = await fetch(apiUrl + 'auth/login', {
         method: 'POST',
         headers: {
