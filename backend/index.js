@@ -7,7 +7,7 @@ const app = express();
 const db = require('./db/mongo.js');
 
 app.use(cors({
-    origin:'*'
+    origin:'https://backend-theta-beige.vercel.app/'
 }));
 
 app.use(urlencoded({ extended: true }));
