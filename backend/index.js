@@ -7,7 +7,7 @@ const app = express();
 const db = require('./db/mongo.js');
 
 app.use(cors({
-    origin:'https://backend-theta-beige.vercel.app/'
+    origin:'*'
 }));
 
 app.use(urlencoded({ extended: true }));
@@ -17,10 +17,14 @@ db.dbInit()
     .then(() => {
         console.log('Conexión realizada');
         app.use('/auth', router);
-        app.listen(4000, () => {
-            console.log('listening at port 4000');
+        const port = process.env.PORT || 4000;
+        app.listen(port, () => {
+            console.log(`Listening on port ${port}`);
         });
     })
     .catch(err => {
         console.error('Error de conexión a la base de datos:', err);
     });
+
+    const port = process.env.PORT || 4000;
+
